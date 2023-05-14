@@ -1,13 +1,149 @@
-body {
+/* common css */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+li {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn_group {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 10px 15px;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #0072e7;
+}
+
+/* Index Page css */
+.main {
+  min-height: 100vh;
+  background-color: rgb(231, 235, 240);
+  padding: 50px 0;
+}
+
+.note_header {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 35px;
+}
+
+.search_form {
+  flex-grow: 1;
+}
+
+
+.note-head h4:last-child {
+  text-align: right;
+}
+
+.note_list_heading {
+  font-size: 22px;
+}
+
+.note_list {
+  margin-top: 20px;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.note_item {
+  display: grid;
+  grid-template-columns: 1fr 0.4fr 0.2fr;
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+.note_item:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.note_item.note-head {
+  background-color: #ccd3de;
+}
+
+
+.note_icons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.nodata_message {
+  text-align: center;
+  font-size: 35px;
+}
+
+.note_form {
+  max-width: 700px;
+  width: 100%;
+  background-color: rgb(231, 235, 240);
+  padding: 25px 20px;
+  border-radius: 10px;
+}
+
+.form_label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.form_group {
+  margin-bottom: 25px;
+}
+
+.form_control {
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+}
+
+.form_control-select {
+  max-width: 200px;
+}
+
+.form_btns {
+  justify-content: flex-end;
+}
+
+/* Modal Css*/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+  overflow: auto;
 }
