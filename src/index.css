@@ -111,9 +111,9 @@ button {
   display: block;
 }
 
-.nodata_message {
+.note_message .nodata_message {
   text-align: center;
-  font-size: 35px;
+  font-size: 30px;
 }
 
 .note_form {
