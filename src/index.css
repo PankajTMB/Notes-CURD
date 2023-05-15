@@ -48,6 +48,7 @@ button {
 .note_header {
   display: flex;
   gap: 10px;
+  align-items: center;
   margin-bottom: 35px;
 }
 
@@ -64,6 +65,10 @@ button {
   font-size: 22px;
 }
 
+.note_title {
+  font-size: 20px;
+}
+
 .note_list {
   margin-top: 20px;
   border-radius: 4px;
@@ -75,8 +80,15 @@ button {
 .note_item {
   display: grid;
   grid-template-columns: 1fr 0.4fr 0.2fr;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
   padding: 15px;
   border-bottom: 1px solid #ccc;
+}
+
+.note_item> :first-child {
+  text-align: left;
 }
 
 .note_item:nth-child(odd) {
@@ -91,10 +103,11 @@ button {
 .note_icons {
   display: flex;
   gap: 10px;
+  align-items: center;
   justify-content: flex-end;
 }
 
-.note_message{
+.note_message {
   display: block;
 }
 
@@ -148,6 +161,43 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 50px 0;
+  padding: 50px 20px;
   overflow: auto;
+}
+
+@media only screen and (max-width: 767px) {
+  .form_control-select {
+    max-width: 120px;
+  }
+
+  .note_item {
+    padding: 12px;
+    grid-template-columns: 1fr 0.7fr 80px;
+  }
+
+  .note_icons {
+    gap: 5px
+  }
+
+  .note_icons svg {
+    height: 15px;
+  }
+
+  .note_list_heading,
+  .form_label {
+    font-size: 16px;
+  }
+
+  .note_title {
+    font-size: 14px;
+  }
+
+  .nodata_message {
+    font-size: 20px;
+  }
+
+  .form_control {
+    padding: 10px;
+    font-size: 14px;
+  }
 }
