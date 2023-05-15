@@ -44,7 +44,7 @@ const NoteDetail = () => {
             }
             localStorage.setItem("notes", JSON.stringify(existingNotes));
             setNoteDetailData((prevalue) => ({ ...prevalue, showForm: false, type: "", getData: true }))
-            alert(formData.type === "add" ? "Note is Successfully Submit" : "Note is Updated")
+            alert(noteDetailData.type === "add" ? "Note is Successfully Added" : "Note is Updated")
         }
     }
 

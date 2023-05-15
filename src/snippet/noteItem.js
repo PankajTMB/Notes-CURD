@@ -10,7 +10,8 @@ const NoteItem = ({ item: data, item: { title, updatedAt } }) => {
         });
         existingNotes.splice(index, 1)
         localStorage.setItem("notes", JSON.stringify(existingNotes));
-        setNoteDetailData((prevalue) => ({ ...prevalue, getData: true }))
+        setNoteDetailData((prevalue) => ({ ...prevalue, getData: true }));
+        alert("Note is Deleted")
     }
     return (
         <>

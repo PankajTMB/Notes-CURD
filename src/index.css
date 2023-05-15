@@ -94,6 +94,10 @@ button {
   justify-content: flex-end;
 }
 
+.note_message{
+  display: block;
+}
+
 .nodata_message {
   text-align: center;
   font-size: 35px;
