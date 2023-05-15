@@ -38,6 +38,10 @@ button {
   background-color: #0072e7;
 }
 
+.warning-btn {
+  background-color: #eb0014;
+}
+
 /* Index Page css */
 .main {
   min-height: 100vh;
@@ -157,6 +161,10 @@ button {
   font-size: 16px;
 }
 
+.form_control-textarea {
+  min-height: 100px;
+}
+
 .form_control-select {
   min-width: 200px;
   padding: 10px;
@@ -180,6 +188,20 @@ button {
   padding: 50px 20px;
   overflow: auto;
 }
+
+/* confirm delete modal */
+.confirm_delete {
+  background-color: #fff;
+  padding: 25px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.confirm_delete .form_btns {
+  margin-top: 20px;
+  justify-content: center;
+}
+
 
 @media only screen and (max-width: 767px) {
 

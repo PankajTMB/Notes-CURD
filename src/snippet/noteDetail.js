@@ -61,7 +61,7 @@ const NoteDetail = () => {
                     </div>
                     <div className="form_group">
                         <label className="form_label" htmlFor="body">Description/Body *</label>
-                        <textarea readOnly={noteStateData.type === "view" ? true : false} required id="body" name="body" placeholder="Enter Description/Body here" className="form_control" value={formData.body} onChange={updateFormData}></textarea>
+                        <textarea readOnly={noteStateData.type === "view" ? true : false} required id="body" name="body" placeholder="Enter Description/Body here" className="form_control form_control-textarea" value={formData.body} onChange={updateFormData}></textarea>
                     </div>
                     <div className="btn_group form_btns">
                         <button className="btn" type="button" onClick={() => { setNoteStateData((prevalue) => ({ ...prevalue, showForm: false, type: "" })) }}>Cancel</button>
