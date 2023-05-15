@@ -5,8 +5,8 @@ import NoteDetail from "../snippet/noteDetail";
 
 export const NoteDetailContext = createContext(null);
 
-const IndexPage = () => {
-    const [noteDetailData, setNoteDetailData] = useState({
+const LandingPage = () => {
+    const [noteStateData, setNoteStateData] = useState({
         showForm: false,
         type: "",
         existingNotes: [],
@@ -17,23 +17,23 @@ const IndexPage = () => {
 
     useEffect(() => {
         let notes = localStorage.getItem("notes") || [];
-        setNoteDetailData((prevalue) => {
+        setNoteStateData((prevalue) => {
             return {
                 ...prevalue,
                 getData: false,
-                existingNotes: notes.length > 0 ?JSON.parse(notes) : []
+                existingNotes: notes.length > 0 ? JSON.parse(notes) : []
             }
         });
-    }, [noteDetailData.getData]);
+    }, [noteStateData.getData]);
 
     return (
         <>
             <div className="main">
                 <div className="container">
-                    <NoteDetailContext.Provider value={{ noteDetailData, setNoteDetailData }}>
+                    <NoteDetailContext.Provider value={{ noteStateData, setNoteStateData }}>
                         <NoteHeader />
                         <NoteList />
-                        {noteDetailData.showForm && <NoteDetail />}
+                        {noteStateData.showForm && <NoteDetail />}
                     </NoteDetailContext.Provider>
                 </div>
             </div>
@@ -41,4 +41,4 @@ const IndexPage = () => {
     )
 }
 
-export default IndexPage;
+export default LandingPage;
