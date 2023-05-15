@@ -16,16 +16,14 @@ const IndexPage = () => {
     })
 
     useEffect(() => {
-        let notes = localStorage.getItem("notes");
-        if (notes) {
-            setNoteDetailData((prevalue) => {
-                return {
-                    ...prevalue,
-                    getData: false,
-                    existingNotes: JSON.parse(notes)
-                }
-            });
-        }
+        let notes = localStorage.getItem("notes") || [];
+        setNoteDetailData((prevalue) => {
+            return {
+                ...prevalue,
+                getData: false,
+                existingNotes: JSON.parse(notes)
+            }
+        });
     }, [noteDetailData.getData]);
 
     return (

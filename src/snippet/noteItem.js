@@ -17,7 +17,7 @@ const NoteItem = ({ item: data, item: { title, updatedAt } }) => {
             {/* note Heading */}
             <h3 className="note_title">{title}</h3>
             {/* note Heading */}
-            <h3 className="note_title">{updatedAt}</h3>
+            <h3 className="note_title">{updatedAt.split('T')[0]}</h3>
             {/* note Icons */}
             <div className="note_icons">
                 <button className="view_icon" onClick={() => { setNoteDetailData((prevalue) => ({ ...prevalue, data: data, showForm: true, type: "view" })) }}>

@@ -9,7 +9,7 @@ const NoteList = () => {
             <ul className="note_list">
                 <li className="note_item note-head">
                     <h4 className="note_list_heading">Title</h4>
-                    <h4 className="note_list_heading">Updated</h4>
+                    <h4 className="note_list_heading">Updated At</h4>
                     <h4 className="note_list_heading">Action</h4>
                 </li>
                 {filterData.length > 0 ?

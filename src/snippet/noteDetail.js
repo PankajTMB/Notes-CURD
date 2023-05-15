@@ -27,11 +27,10 @@ const NoteDetail = () => {
             if (!formData.title && !formData.body) { alert("Please Fill required feild") }
             let existingNotes = noteDetailData.existingNotes;
             let date = new Date();
-            date = date.toISOString().split('T')[0]
             let newNote = {
                 ...formData,
                 updatedAt: date,
-                ...(noteDetailData.type === 'add' && { id: new Date(), createdAt: date })
+                ...(noteDetailData.type === 'add' && { id: date, createdAt: date })
             };
 
             if (noteDetailData.type === "add") {

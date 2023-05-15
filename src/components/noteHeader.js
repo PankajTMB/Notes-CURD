@@ -10,35 +10,33 @@ const NoteHeader = () => {
 
     // search debouncing 
     useEffect(() => {
-        if (noteDetailData.existingNotes.length > 0) {
-            let debouncing = setTimeout(() => {
-                let filterData = noteDetailData.existingNotes.filter((item) => {
-                    return item.title.includes(formData.search)
-                })
+        let debouncing = setTimeout(() => {
+            let filterData = noteDetailData.existingNotes.filter((item) => {
+                return item.title.includes(formData.search)
+            })
 
-                filterData.sort(function compare(a, b) {
-                    if (formData.sort === "date") {
-                        if (a.updatedAt < b.updatedAt) {
-                            return -1;
-                        }
-                        if (a.updatedAt > b.updatedAt) {
-                            return 1;
-                        }
-                    } else {
-                        if (a.title < b.title) {
-                            return -1;
-                        }
-                        if (a.title > b.title) {
-                            return 1;
-                        }
+            filterData.sort(function compare(a, b) {
+                if (formData.sort === "date") {
+                    if (a.updatedAt < b.updatedAt) {
+                        return 1;
                     }
+                    if (a.updatedAt > b.updatedAt) {
+                        return -1;
+                    }
+                } else {
+                    if (a.title < b.title) {
+                        return -1;
+                    }
+                    if (a.title > b.title) {
+                        return 1;
+                    }
+                }
 
-                    return 0;
-                });
-                setNoteDetailData(prevalue => ({ ...prevalue, filterData }))
-            }, 400)
-            return () => clearTimeout(debouncing)
-        }
+                return 0;
+            });
+            setNoteDetailData(prevalue => ({ ...prevalue, filterData }))
+        }, 400)
+        return () => clearTimeout(debouncing)
     }, [noteDetailData.existingNotes, setNoteDetailData, formData])
 
     // Update Form data funcion
