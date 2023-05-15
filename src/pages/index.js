@@ -21,7 +21,7 @@ const IndexPage = () => {
             return {
                 ...prevalue,
                 getData: false,
-                existingNotes: JSON.parse(notes)
+                existingNotes: notes.length > 0 ?JSON.parse(notes) : []
             }
         });
     }, [noteDetailData.getData]);
