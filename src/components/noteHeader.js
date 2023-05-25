@@ -12,7 +12,7 @@ const NoteHeader = () => {
     useEffect(() => {
         let debouncing = setTimeout(() => {
             let filterData = noteStateData.existingNotes.filter((item) => {
-                return item.title.includes(formData.search)
+                return item.title.toLowerCase().includes(formData.search.toLowerCase())
             })
             setNoteStateData(prevalue => ({ ...prevalue, filterData }))
         }, 400)
